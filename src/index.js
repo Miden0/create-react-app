@@ -1,42 +1,47 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import './style.css';
 
-const Form = () => {
-  const [titulo, setTitulo] = useState('');
-  const [show, setShow] = useState(false);
-  const tituloRef = useRef();
+const Schedule = () => {
+  const turns = [9, 10, 11, 18, 19];
 
-  useEffect(() => {
-    if (show) {
-      tituloRef.current.focus();
-    }
-  });
+  const createRows = () => {
+    return turns.map((val) => {
+      return (
+        <tr>
+          <td>{val}hs</td>
+
+          <td class="turn"> </td>
+          <td class="turn"> </td>
+          <td class="turn"> </td>
+          <td class="turn"> </td>
+          <td class="turn"> </td>
+        </tr>
+      );
+    });
+  };
 
   return (
-    <div>
-      <button onClick={() => setShow(!show)}>
-        {(show && 'hide') || 'show'}
-      </button>
-      {show && (
-        <form>
-          <label htmlFor="title"> Titulo </label>
-          <input
-            ref={tituloRef}
-            value={titulo}
-            type="text"
-            id="title"
-            onChange={(ev) => setTitulo(ev.target.value)}
-          />
-        </form>
-      )}
-    </div>
+    <table id="tb">
+      <caption> turnos del consultorio </caption>
+      <tr>
+        <th></th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miercoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+      </tr>
+
+      {createRows()}
+    </table>
   );
 };
 
 const App = () => {
   return (
     <div>
-      <Form />
+      <Schedule />
     </div>
   );
 };

@@ -1,3 +1,13 @@
-h1, p {
+h1,
+p {
   font-family: Lato;
+}
+
+#tb {
+  border: 1px solid red;
+  frame: border;
+}
+
+.turn {
+  border: 1px solid blue;
 }
