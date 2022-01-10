@@ -5,9 +5,7 @@ import './style.css';
 
 const Schedule = () => {
   const turns = [
-    { hour: 9 ,
-    lunes : "",
-  martes : ""},
+    { hour: 9, lunes: 'hola', martes: '' },
     { hour: 10 },
     { hour: 11 },
     { hour: 18 },
@@ -20,7 +18,7 @@ const Schedule = () => {
         <tr>
           <td>{val.hour}hs</td>
 
-          <td class="turn"> </td>
+          <td class="turn">{val.lunes} </td>
           <td class="turn"> </td>
           <td class="turn"> </td>
           <td class="turn"> </td>
