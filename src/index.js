@@ -1,15 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
+
 import ReactDOM from 'react-dom';
 import './style.css';
 
 const Schedule = () => {
-  const turns = [9, 10, 11, 18, 19];
+  const turns = [
+    { hour: 9 ,
+    lunes : "",
+  martes : ""},
+    { hour: 10 },
+    { hour: 11 },
+    { hour: 18 },
+    { hour: 19 },
+  ];
 
   const createRows = () => {
     return turns.map((val) => {
       return (
         <tr>
-          <td>{val}hs</td>
+          <td>{val.hour}hs</td>
 
           <td class="turn"> </td>
           <td class="turn"> </td>
